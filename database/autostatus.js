@@ -10,7 +10,7 @@ const AutoStatusDB = database.define('autostatus', {
   },
   autoLikeStatus: {
     type: DataTypes.STRING,
-    defaultValue: 'false',
+    defaultValue: 'true',
     allowNull: false,
     validate: { isIn: [['true', 'false']] }
   },
@@ -53,7 +53,7 @@ async function getAutoStatusSettings() {
     console.error('Error getting auto status settings:', error);
     return {
       autovewStatus: 'true',
-      autoLikeStatus: 'false',
+      autoLikeStatus: 'true',
       autoReplyStatus: 'false',
       statusReplyText: '',
       statusLikeEmojis: ''
